@@ -13,7 +13,7 @@ import {
   ProtectionAndHygienePage,
   PersonalCarePage,
   CovidEssentialPage,
-  CheckOut,
+  MyCart,
 } from "./pages/export-pages";
 class App extends React.Component {
   render() {
@@ -38,7 +38,7 @@ class App extends React.Component {
             />
             <Route path="/PersonalCare" element={<PersonalCarePage />} />
             <Route path="/CovidEssential" element={<CovidEssentialPage />} />
-            <Route path="/CheckOut" element={<CheckOut />} />
+            <Route path="/MyCart" element={<MyCart />} />
             <Route path="/Login/Register" element={<Register />} />
             <Route path="/MyCart/OderSummary" element={<OrderSummary />} />
           </Routes>
