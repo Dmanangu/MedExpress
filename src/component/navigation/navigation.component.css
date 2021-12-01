@@ -1,0 +1,350 @@
+.firstHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.user {
+  width: 60px;
+  height: 60px;
+}
+
+.FDA {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.fpartHeader {
+  display: flex;
+  flex-direction: row;
+  margin-left: 60%;
+  position: absolute;
+}
+
+.home-btn {
+  border: transparent;
+  background-color: transparent;
+  margin-right: 30px;
+}
+
+.home-btn:hover {
+  background-color: #a3bf43;
+  font-size: 20px;
+}
+
+.about-btn {
+  border: transparent;
+  background-color: transparent;
+  margin-right: 30px;
+}
+
+.about-btn:hover {
+  background-color: #a3bf43;
+  font-size: 20px;
+}
+
+.contact-btn {
+  border: transparent;
+  background-color: transparent;
+  margin-right: 30px;
+}
+
+.contact-btn:hover {
+  background-color: #a3bf43;
+  font-size: 20px;
+}
+
+.checkOut-btn {
+  border: transparent;
+  background-color: transparent;
+  margin-right: 30px;
+}
+
+.checkOut-btn:hover {
+  background-color: #a3bf43;
+  font-size: 20px;
+}
+
+.drop-btn {
+  border: transparent;
+  background-color: transparent;
+  margin-left: 60px;
+  cursor: pointer;
+  width: 55px;
+  height: 7vh;
+}
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.drop-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-content button:hover {
+  background-color: #f1f1f1;
+}
+
+.user-dropdown:hover .drop-content {
+  display: block;
+}
+
+.user-dropdown:hover .drop-btn {
+  background-color: #a3bf43;
+}
+
+.profile-btn {
+  border: transparent;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.logOut-btn {
+  border: transparent;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.mainLogo {
+  margin-right: 50%;
+}
+
+.menu-bars {
+  margin-top: 7px;
+  position: absolute;
+  margin-left: 20px;
+}
+
+.otcm-btn {
+  margin-left: 10px;
+  margin-right: 70px;
+  border: transparent;
+  background-color: transparent;
+}
+
+.otcm-btn:hover {
+  background-color: #a3bf43;
+  box-shadow: 2px 2px 5px black;
+}
+
+.prescription-btn {
+  margin-left: 20px;
+  margin-right: 70px;
+  border: transparent;
+  background-color: transparent;
+}
+
+.prescription-btn:hover {
+  background-color: #a3bf43;
+  box-shadow: 2px 2px 5px black;
+}
+
+.medicalsupply-btn {
+  margin-left: 20px;
+  margin-right: 70px;
+  border: transparent;
+  background-color: transparent;
+}
+
+.medicalsupply-btn:hover {
+  background-color: #a3bf43;
+  box-shadow: 2px 2px 5px black;
+}
+
+.pah-btn {
+  margin-left: 20px;
+  margin-right: 70px;
+  border: transparent;
+  background-color: transparent;
+}
+
+.pah-btn:hover {
+  background-color: #a3bf43;
+  box-shadow: 2px 2px 5px black;
+}
+
+.pc-btn {
+  margin-left: 20px;
+  margin-right: 70px;
+  border: transparent;
+  background-color: transparent;
+}
+
+.pc-btn:hover {
+  background-color: #a3bf43;
+  box-shadow: 2px 2px 5px black;
+}
+
+.ce-btn {
+  margin-left: 20px;
+  margin-right: 40px;
+  border: transparent;
+  background-color: transparent;
+}
+
+.ce-btn:hover {
+  background-color: #a3bf43;
+  box-shadow: 2px 2px 5px black;
+}
+
+.otc-image {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 80px;
+  width: 90vw;
+  height: 70vh;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 20px;
+}
+
+.otc-txt {
+  color: black;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-shadow: 2px 2px 8px black;
+}
+
+.txt-padding {
+  top: 40%;
+  left: 35%;
+  position: absolute;
+  background-color: white;
+  width: 30vw;
+  height: 10vh;
+  opacity: 0.9;
+}
+
+.pd-image {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 80px;
+  width: 90vw;
+  height: 70vh;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 20px;
+}
+
+.pd-txt {
+  color: black;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-shadow: 2px 2px 8px black;
+}
+
+.ms-image {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 80px;
+  width: 90vw;
+  height: 70vh;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 20px;
+}
+
+.ms-txt {
+  color: black;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-shadow: 2px 2px 8px black;
+}
+
+.pah-image {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 80px;
+  width: 90vw;
+  height: 70vh;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 20px;
+}
+
+.pah-txt {
+  color: black;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-shadow: 2px 2px 8px black;
+}
+
+.pc-image {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 80px;
+  width: 90vw;
+  height: 70vh;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 20px;
+}
+
+.pc-txt {
+  color: black;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-shadow: 2px 2px 8px black;
+}
+
+.ce-image {
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 80px;
+  width: 90vw;
+  height: 70vh;
+  box-shadow: 2px 2px 5px black;
+  border-radius: 20px;
+}
+
+.ce-txt {
+  color: black;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  text-shadow: 2px 2px 8px black;
+}
+
+.line-padding {
+  top: 8%;
+  position: absolute;
+  background-color: black;
+  color: black;
+  width: 100vw;
+  height: 1.5px;
+}
+
+.lines-padding {
+  top: 12%;
+  position: absolute;
+  background-color: black;
+  color: black;
+  width: 100vw;
+  height: 2px;
+}
