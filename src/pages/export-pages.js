@@ -10,4 +10,4 @@ export { MedicalSuppliesPage } from "./medicalsupplies_page/medicalsupplies.comp
 export { ProtectionAndHygienePage } from "./protectionandhygiene_page/protectionandhygiene.component";
 export { PersonalCarePage } from "./personalcare_page/personalcare.component";
 export { CovidEssentialPage } from "./covidessential_page/covidessential.component";
-export { MyCart } from "./mycart_page/mycart.component";
+export { CheckoutPage } from "./checkout_page/checkout.component";

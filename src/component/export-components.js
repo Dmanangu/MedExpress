@@ -7,4 +7,3 @@ export { SearchBar } from "./searchbar/searchbar.component";
 export { Address } from "./check-out-commands/address.component";
 export { OrderSummary } from "./check-out-commands/ordersummary.component";
 export { Payment } from "./check-out-commands/payment.component";
-export { ProductCard } from "./product-card/product_card";
