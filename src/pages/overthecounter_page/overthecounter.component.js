@@ -22,6 +22,12 @@ export const OverTheCounterPage = () => {
           <div className="row justify-content-center"></div>
         </section>
       </div>
+
+      <div>
+        <section className="py-4 container">
+          <div className="row justify-content-center"></div>
+        </section>
+      </div>
     </div>
   );
 };
