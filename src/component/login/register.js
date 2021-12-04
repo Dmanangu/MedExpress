@@ -20,8 +20,7 @@ export class Register extends React.Component {
   handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { displayName, email, address, tel, password, confirmPassword } =
-      this.state;
+    const { displayName, email, tel, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
       alert("passwords don't match");

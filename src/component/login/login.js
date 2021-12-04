@@ -1,7 +1,7 @@
 import React from "react";
 import logoImg from "../../assets/images/app_logo.png"; //
 import { Link } from "react-router-dom";
-import bg_background from "../../assets/images/bg_background.jpg";
+//import bg_background from "../../assets/images/bg_background.jpg";
 import { auth } from "../../firebase/firebase.utils";
 import { Navigate } from "react-router-dom";
 import "./login.css";
