@@ -42,7 +42,7 @@ export const Navigation = ({ currentUser, hidden }) => (
               <CartIcon />
             </button>
           </Link>
-          <div>{hidden ? null : <CartDropdown />}</div>
+
           <div className="user-dropdown">
             <div className="userIcon">
               <img src={user} className="drop-btn" alt="icon" />

@@ -1,6 +1,10 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
+import "firebase/firestore";
+import { Firestore } from "@firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "@firebase/firestore";
 
 const config = {
   apiKey: "AIzaSyCHLsF4zuCvlwMbXt2YGW3i65BvFn5hzxI",
@@ -37,6 +41,34 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
 
   return userRef;
+};
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map((doc) => {
+    const {
+      id,
+      prodName,
+      price,
+      strength,
+      genName,
+      category,
+      packageType,
+      imageUrl,
+    } = doc.data();
+    return {
+      id: doc.id,
+      medID: id,
+      prodName: prodName,
+      price: price,
+      strength: strength,
+      genName: genName,
+      category: category,
+      packageType: packageType,
+      imageUrl: imageUrl,
+    };
+  });
+
+  return transformedCollection;
 };
 
 export const auth = firebase.auth();

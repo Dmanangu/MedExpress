@@ -1,12 +1,4 @@
-.medicine-card-container {
-  margin-top: 40%;
-  width: 90%;
-  border-radius: 30px;
-  border-style: solid;
-  margin-left: 80px;
-}
-
-.otc-image {
+.pd-image {
   box-shadow: 2px 2px 4px black;
   border-radius: 15px;
   margin-left: 80px;
@@ -15,7 +7,7 @@
   width: 90%;
   position: absolute;
 }
-.otc-txt {
+.pd-txt {
   color: black;
   position: absolute;
   top: 30%;

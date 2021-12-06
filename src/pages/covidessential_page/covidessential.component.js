@@ -1,6 +1,7 @@
 import React from "react";
 import ceImg from "../../assets/images/bg_ce.png";
 import { Navigation } from "../../component/export-components";
+import "./covidessential.component.css";
 
 export class CovidEssentialPage extends React.Component {
   render() {

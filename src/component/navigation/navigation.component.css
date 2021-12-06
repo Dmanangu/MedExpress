@@ -126,7 +126,7 @@
 .menu-bars {
   margin-top: 7px;
   position: absolute;
-  margin-left: 20px;
+  margin-left: 100px;
 }
 
 .otcm-btn {
@@ -199,36 +199,6 @@
 .ce-btn:hover {
   background-color: #a3bf43;
   box-shadow: 2px 2px 5px black;
-}
-
-.otc-image {
-  position: absolute;
-  margin-top: 50px;
-  margin-left: 80px;
-  width: 90vw;
-  height: 70vh;
-  box-shadow: 2px 2px 5px black;
-  border-radius: 20px;
-}
-
-.otc-txt {
-  color: black;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  text-shadow: 2px 2px 8px black;
-}
-
-.txt-padding {
-  top: 40%;
-  left: 35%;
-  position: absolute;
-  background-color: white;
-  width: 30vw;
-  height: 10vh;
-  opacity: 0.9;
 }
 
 .pd-image {

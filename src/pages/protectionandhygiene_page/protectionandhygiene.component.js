@@ -2,6 +2,8 @@ import React from "react";
 import pahImg from "../../assets/images/bg_pah.jpg";
 import { Navigation } from "../../component/export-components";
 
+import "./protectionandhygiene.component.css";
+
 export class ProtectionAndHygienePage extends React.Component {
   render() {
     return (

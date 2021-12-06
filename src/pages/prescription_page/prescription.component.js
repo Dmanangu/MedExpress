@@ -1,7 +1,8 @@
 import React from "react";
 import pdImg from "../../assets/images/bg_pd.jpg";
 import { Navigation } from "../../component/export-components";
-import "../../component/navigation/navigation.component.css";
+
+import "./prescription.component.css";
 
 export class PrescriptionPage extends React.Component {
   render() {

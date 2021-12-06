@@ -2,6 +2,8 @@ import React from "react";
 import pcImg from "../../assets/images/bg_pc.jpg";
 import { Navigation } from "../../component/export-components";
 
+import "./personalcare.component.css";
+
 export class PersonalCarePage extends React.Component {
   render() {
     return (

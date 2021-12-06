@@ -1,91 +1,108 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-
-import { OrderSummary } from './component/export-components';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import "firebase/firestore";
 import {
-	Login,
-	Register,
-	ProfilePage,
-	AboutPage,
-	ContactPage,
-	OverTheCounterPage,
-	PrescriptionPage,
-	MedicalSuppliesPage,
-	ProtectionAndHygienePage,
-	PersonalCarePage,
-	CovidEssentialPage,
-	CheckoutPage
-} from './pages/export-pages';
+  firestore,
+  convertCollectionsSnapshotToMap,
+} from "./firebase/firebase.utils.js";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { OrderSummary } from "./component/export-components";
+import {
+  Login,
+  Register,
+  ProfilePage,
+  AboutPage,
+  ContactPage,
+  OverTheCounterPage,
+  PrescriptionPage,
+  MedicalSuppliesPage,
+  ProtectionAndHygienePage,
+  PersonalCarePage,
+  CovidEssentialPage,
+  CheckoutPage,
+} from "./pages/export-pages";
 
-import { setCurrentUser } from './redux/user/user.actions';
-import { selectCurrentUser } from './redux/user/user.selectors';
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+
+import { setCurrentUser } from "./redux/user/user.actions";
+import { selectCurrentUser } from "./redux/user/user.selectors";
 
 class App extends React.Component {
-	unsubscribeFromAuth = null;
+  unsubscribeFromAuth = null;
 
-	componentDidMount() {
-		const { setCurrentUser } = this.props;
+  componentDidMount() {
+    const { setCurrentUser } = this.props;
 
-		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-			if (userAuth) {
-				const userRef = await createUserProfileDocument(userAuth);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
 
-				userRef.onSnapshot((snapShot) => {
-					setCurrentUser({
-						id: snapShot.id,
-						...snapShot.data()
-					});
-				});
-			}
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      }
 
-			setCurrentUser(userAuth);
-		});
-	}
+      setCurrentUser(userAuth);
 
-	componentWillUnmount() {
-		this.unsubscribeFromAuth();
-	}
-	render() {
-		return (
-			<div>
-				<Routes>
-					<Route path="/" element={<OverTheCounterPage />} />
-					<Route
-						path="/Login"
-						element={<Login />}
-						render={() => (this.props.currentUser ? <Navigate to="/" /> : <Login />)}
-					/>
-					<Route path="/Profile" element={<ProfilePage />} />
-					<Route path="/About" element={<AboutPage />} />
-					<Route path="/Contacts" element={<ContactPage />} />
+      const collectionRef = firestore.collection("medicine");
 
-					<Route path="/Home" element={<OverTheCounterPage />} />
+      collectionRef.get().then((snapshot) => {
+        const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+        console.log(collectionsMap);
+      });
+    });
+  }
 
-					<Route path="/OverTheCounter" element={<OverTheCounterPage />} />
-					<Route path="/Prescription" element={<PrescriptionPage />} />
-					<Route path="/MedicalSupplies" element={<MedicalSuppliesPage />} />
-					<Route path="/ProtectionAndHygiene" element={<ProtectionAndHygienePage />} />
-					<Route path="/PersonalCare" element={<PersonalCarePage />} />
-					<Route path="/CovidEssential" element={<CovidEssentialPage />} />
-					<Route path="/CheckoutPage" element={<CheckoutPage />} />
-					<Route path="/Login/Register" element={<Register />} />
-					<Route path="/MyCart/OderSummary" element={<OrderSummary />} />
-				</Routes>
-			</div>
-		);
-	}
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+
+  render() {
+    return (
+      <div>
+        <Routes>
+          <Route path="/" element={<OverTheCounterPage />} />
+          <Route
+            path="/Login"
+            element={<Login />}
+            render={() =>
+              this.props.currentUser ? <Navigate to="/" /> : <Login />
+            }
+          />
+          <Route path="/Profile" element={<ProfilePage />} />
+          <Route path="/About" element={<AboutPage />} />
+          <Route path="/Contacts" element={<ContactPage />} />
+
+          <Route path="/Home" element={<OverTheCounterPage />} />
+
+          <Route path="/OverTheCounter" element={<OverTheCounterPage />} />
+          <Route path="/Prescription" element={<PrescriptionPage />} />
+          <Route path="/MedicalSupplies" element={<MedicalSuppliesPage />} />
+          <Route
+            path="/ProtectionAndHygiene"
+            element={<ProtectionAndHygienePage />}
+          />
+          <Route path="/PersonalCare" element={<PersonalCarePage />} />
+          <Route path="/CovidEssential" element={<CovidEssentialPage />} />
+          <Route path="/CheckoutPage" element={<CheckoutPage />} />
+          <Route path="/Login/Register" element={<Register />} />
+          <Route path="/MyCart/OderSummary" element={<OrderSummary />} />
+        </Routes>
+      </div>
+    );
+  }
 }
 const mapStateToProps = createStructuredSelector({
-	currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	setCurrentUser: (user) => dispatch(setCurrentUser(user))
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

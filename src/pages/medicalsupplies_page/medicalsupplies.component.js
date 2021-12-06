@@ -2,6 +2,8 @@ import React from "react";
 import msImg from "../../assets/images/bg_ms.jpg";
 import { Navigation } from "../../component/export-components";
 
+import "./medicalsupplies.component.css";
+
 export class MedicalSuppliesPage extends React.Component {
   render() {
     return (
