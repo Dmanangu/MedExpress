@@ -1,0 +1,16 @@
+.product-card-container{
+    color: tomato;
+    font-size: 35px;
+    text-decoration: none;
+    margin: 40px;
+}
+
+.card{
+    padding:30px;
+}
+.card-body{
+    text-align: center;
+}
+.card-img{
+    width: 200px;
+}
