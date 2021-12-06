@@ -1,0 +1,8 @@
+.search-bar {
+  display: inline-block;
+  margin-left: 15%;
+  font-size: 20px;
+  width: 60%;
+  height: 50px;
+  border-radius: 10px;
+}

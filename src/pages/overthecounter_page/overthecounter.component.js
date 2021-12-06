@@ -1,35 +1,49 @@
 import React from "react";
 import overImg from "../../assets/images/bg_over.png";
-import { Navigation } from "../../component/export-components";
+import { Navigation, SearchBar } from "../../component/export-components";
 import {
   firestore,
   convertCollectionsSnapshotToMap,
+  convertCollectionsToList,
 } from "../../firebase/firebase.utils.js";
+import Card from "../../component/product-card/card.component";
+
 import "./overthecounter.component.css";
+import { setSearchField } from "../../redux/searchfield/search.action";
+import { connect } from "react-redux";
+
+const maptStateToProps = (state) => {
+  return {
+    searchField: state.searchField,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+  };
+};
 
 export class OverTheCounterPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collection: [],
+      dataList: [],
     };
   }
 
   componentDidMount() {
     const collectionRef = firestore.collection("medicine");
     collectionRef.get().then((snapshot) => {
-      const temp = convertCollectionsSnapshotToMap(snapshot);
-      this.setState({ collection: temp });
-      // console.log(temp);
+      const collection = convertCollectionsSnapshotToMap(snapshot);
+      const arrList = convertCollectionsToList(collection, "A");
+      this.setState({ dataList: arrList });
     });
   }
-
   render() {
-    const filter = [];
-
-    const { collection } = this.state;
+    const { dataList } = this.state;
     return (
-      <div>
+      <div className="otc-content">
         <Navigation />
         <div className="line-padding"></div>
         <div className="lines-padding"></div>
@@ -38,35 +52,20 @@ export class OverTheCounterPage extends React.Component {
           <div className="txt-padding"></div>
           <h1 className="otc-txt">Over The Counter</h1>
         </header>
-        <div>
-          <section className="py-4 container">
-            <div className="row justify-content-center"></div>
-          </section>
+        <div className="search-container">
+          <SearchBar />
         </div>
-        prodName: prodName, price: price, strength: strength, genName: genName,
-        category: category, packageType: packageType, imageUrl: imageUrl,
-        {collection.map(
-          ({
-            id,
-            medID,
-            prodName,
-            price,
-            strength,
-            genName,
-            category,
-            packageType,
-            imageUrl,
-          }) => (
-            <div>
-              {medID}
-              <img src={imageUrl} alt="" />
-            </div>
-          )
-        )}
-        );
+        <div className="contain-card">
+          {dataList.map((item) => (
+            <Card data={item} />
+          ))}
+        </div>
       </div>
     );
   }
 }
 
-export default OverTheCounterPage;
+export default connect(
+  maptStateToProps,
+  mapDispatchToProps
+)(OverTheCounterPage);

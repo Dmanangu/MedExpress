@@ -71,6 +71,38 @@ export const convertCollectionsSnapshotToMap = (collections) => {
   return transformedCollection;
 };
 
+export const convertCollectionsToList = (collections, filterKey) => {
+  const filteredData = [];
+  const newList = [];
+  collections.map(
+    ({
+      id,
+      medID,
+      prodName,
+      price,
+      strength,
+      genName,
+      category,
+      packageType,
+      imageUrl,
+    }) =>
+      filteredData.push([
+        id,
+        medID,
+        prodName,
+        price,
+        strength,
+        genName,
+        category,
+        packageType,
+        imageUrl,
+      ])
+  );
+  filteredData.map((arr) => (arr[6] === filterKey ? newList.push(arr) : ""));
+
+  return newList;
+};
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
