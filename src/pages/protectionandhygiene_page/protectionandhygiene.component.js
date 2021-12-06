@@ -30,7 +30,7 @@ export class ProtectionAndHygienePage extends React.Component {
   render() {
     const { dataList } = this.state;
     return (
-      <div>
+      <div className="pah-content">
         <Navigation />
         <div className="line-padding"></div>
         <div className="lines-padding"></div>

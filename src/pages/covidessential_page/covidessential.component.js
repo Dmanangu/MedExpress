@@ -29,7 +29,7 @@ export class CovidEssentialPage extends React.Component {
   render() {
     const { dataList } = this.state;
     return (
-      <div>
+      <div className="ce-content">
         <Navigation />
         <div className="line-padding"></div>
         <div className="lines-padding"></div>

@@ -30,7 +30,7 @@ export class PersonalCarePage extends React.Component {
   render() {
     const { dataList } = this.state;
     return (
-      <div>
+      <div className="pc-content">
         <Navigation />
         <div className="line-padding"></div>
         <div className="lines-padding"></div>
