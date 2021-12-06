@@ -3,6 +3,9 @@
   font-size: 35px;
   text-decoration: none;
   box-shadow: 2px 2px 4px black;
+  background-color: white;
+  width: 350px;
+  height: 500px;
 }
 
 .card-body {
