@@ -58,7 +58,7 @@ export class Login extends React.Component {
             value={email}
             onChange={this.handleChange}
             className="username"
-            placeholder="Username"
+            placeholder="Email"
           />
         </div>
         <input

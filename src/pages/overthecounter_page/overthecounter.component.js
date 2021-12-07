@@ -1,52 +1,70 @@
 import React from "react";
 import overImg from "../../assets/images/bg_over.png";
-import { Navigation } from "../../component/export-components";
-import "../../component/navigation/navigation.component.css";
-<<<<<<< HEAD
+import { Navigation, SearchBar } from "../../component/export-components";
+import {
+  firestore,
+  convertCollectionsSnapshotToMap,
+  convertCollectionsToList,
+} from "../../firebase/firebase.utils.js";
+import Card from "../../component/product-card/card.component";
+
 import "./overthecounter.component.css";
+import { setSearchField } from "../../redux/searchfield/search.action";
+import { connect } from "react-redux";
 
-export const OverTheCounterPage = () => {
-=======
-import { ProductCard } from "../../component/export-components";
-import data from "../../component/product-card/data.component";
-
-export const OverTheCounterPage = () => {
-  console.warn(data.productData);
->>>>>>> 57ffbad5611a8202ce5ec4cd0a4e4c5f58ae0b97
-  return (
-    <div>
-      <Navigation />
-      <div className="line-padding"></div>
-      <div className="lines-padding"></div>
-      <header className="header-otc">
-        <img className="otc-image" src={overImg} alt="over" />
-        <div className="txt-padding"></div>
-        <h1 className="otc-txt">Over The Counter</h1>
-      </header>
-<<<<<<< HEAD
-=======
-      <div>
-        <section className="py-4 container">
-          <div className="row justify-content-center">
-            {data.productData.map((item, index) => {
-              return (
-                <ProductCard
-                  img={item.img}
-                  title={item.title}
-                  grams={item.grams}
-                  mtype={item.mtype}
-                  price={item.price}
-                  item={item}
-                  key={index}
-                />
-              );
-            })}
-          </div>
-        </section>
-      </div>
->>>>>>> 57ffbad5611a8202ce5ec4cd0a4e4c5f58ae0b97
-    </div>
-  );
+const maptStateToProps = (state) => {
+  return {
+    searchField: state.searchField,
+  };
 };
 
-export default OverTheCounterPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+  };
+};
+
+export class OverTheCounterPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataList: [],
+    };
+  }
+
+  componentDidMount() {
+    const collectionRef = firestore.collection("medicine");
+    collectionRef.get().then((snapshot) => {
+      const collection = convertCollectionsSnapshotToMap(snapshot);
+      const arrList = convertCollectionsToList(collection, "A");
+      this.setState({ dataList: arrList });
+    });
+  }
+  render() {
+    const { dataList } = this.state;
+    return (
+      <div className="otc-content">
+        <Navigation />
+
+        <header className="header-otc">
+          <img className="otc-image" src={overImg} alt="over" />
+          <div className="txt-padding"></div>
+          <h1 className="otc-txt">Over The Counter</h1>
+        </header>
+        <div className="search-container">
+          <SearchBar />
+        </div>
+        <div className="contain-card">
+          {dataList.map((item) => (
+            <Card data={item} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
+
+export default connect(
+  maptStateToProps,
+  mapDispatchToProps
+)(OverTheCounterPage);

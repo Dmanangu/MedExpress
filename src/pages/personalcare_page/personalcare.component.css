@@ -1,26 +1,10 @@
-.otc-content {
+.pc-content {
   background-image: url("../../assets/images/bg_image.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.medicine-card-container {
-  margin-top: 40%;
-  width: 90%;
-  border-radius: 30px;
-  border-style: solid;
-  margin-left: 80px;
-}
-
-.contain-card {
-  margin-top: 2%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(auto, 3fr);
-  gap: 30px 20px;
-}
-
-.otc-image {
+.pc-image {
   box-shadow: 2px 2px 4px black;
   border-radius: 15px;
   margin-left: 80px;
@@ -29,7 +13,7 @@
   width: 90%;
   position: absolute;
 }
-.otc-txt {
+.pc-txt {
   color: black;
   position: absolute;
   top: 30%;
@@ -47,9 +31,4 @@
   width: 35vw;
   height: 10vh;
   opacity: 0.9;
-}
-
-.search-container {
-  margin-top: 22%;
-  margin-left: 10%;
 }

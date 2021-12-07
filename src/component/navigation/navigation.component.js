@@ -42,7 +42,6 @@ export const Navigation = ({ currentUser, hidden }) => (
               <CartIcon />
             </button>
           </Link>
-          <div>{hidden ? null : <CartDropdown />}</div>
           <div className="user-dropdown">
             <div className="userIcon">
               <img src={user} className="drop-btn" alt="icon" />
@@ -61,6 +60,7 @@ export const Navigation = ({ currentUser, hidden }) => (
             </div>
           </div>
         </div>
+        <div className="line-padding"></div>
       </div>
     </div>
     <div className="menu-bars">
@@ -95,6 +95,7 @@ export const Navigation = ({ currentUser, hidden }) => (
         </button>
       </Link>
     </div>
+    <div className="lines-padding"></div>
   </div>
 );
 const mapStateToProps = createStructuredSelector({

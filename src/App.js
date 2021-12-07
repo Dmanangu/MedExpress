@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import "firebase/firestore";
+import {
+  firestore,
+  convertCollectionsSnapshotToMap,
+} from "./firebase/firebase.utils.js";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -43,39 +48,51 @@ class App extends React.Component {
       }
 
       setCurrentUser(userAuth);
+
+      const collectionRef = firestore.collection("medicine");
+
+      collectionRef.get().then((snapshot) => {
+        const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+        console.log(collectionsMap);
+      });
     });
   }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
+
   render() {
     return (
       <div>
-        <Router>
-          <Routes>
-            <Route path="/" element={<OverTheCounterPage />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Profile" element={<ProfilePage />} />
-            <Route path="/About" element={<AboutPage />} />
-            <Route path="/Contacts" element={<ContactPage />} />
+        <Routes>
+          <Route path="/" element={<OverTheCounterPage />} />
+          <Route
+            path="/Login"
+            element={<Login />}
+            render={() =>
+              this.props.currentUser ? <Navigate to="/" /> : <Login />
+            }
+          />
+          <Route path="/Profile" element={<ProfilePage />} />
+          <Route path="/About" element={<AboutPage />} />
+          <Route path="/Contacts" element={<ContactPage />} />
 
-            <Route path="/Home" element={<OverTheCounterPage />} />
+          <Route path="/Home" element={<OverTheCounterPage />} />
 
-            <Route path="/OverTheCounter" element={<OverTheCounterPage />} />
-            <Route path="/Prescription" element={<PrescriptionPage />} />
-            <Route path="/MedicalSupplies" element={<MedicalSuppliesPage />} />
-            <Route
-              path="/ProtectionAndHygiene"
-              element={<ProtectionAndHygienePage />}
-            />
-            <Route path="/PersonalCare" element={<PersonalCarePage />} />
-            <Route path="/CovidEssential" element={<CovidEssentialPage />} />
-            <Route path="/CheckoutPage" element={<CheckoutPage />} />
-            <Route path="/Login/Register" element={<Register />} />
-            <Route path="/MyCart/OderSummary" element={<OrderSummary />} />
-          </Routes>
-        </Router>
+          <Route path="/OverTheCounter" element={<OverTheCounterPage />} />
+          <Route path="/Prescription" element={<PrescriptionPage />} />
+          <Route path="/MedicalSupplies" element={<MedicalSuppliesPage />} />
+          <Route
+            path="/ProtectionAndHygiene"
+            element={<ProtectionAndHygienePage />}
+          />
+          <Route path="/PersonalCare" element={<PersonalCarePage />} />
+          <Route path="/CovidEssential" element={<CovidEssentialPage />} />
+          <Route path="/CheckoutPage" element={<CheckoutPage />} />
+          <Route path="/Login/Register" element={<Register />} />
+          <Route path="/MyCart/OderSummary" element={<OrderSummary />} />
+        </Routes>
       </div>
     );
   }
