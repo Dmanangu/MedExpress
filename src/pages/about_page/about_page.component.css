@@ -1,0 +1,24 @@
+.bigLogo-container{
+    margin-left: 36%;
+}
+.about-us{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 80px;
+}
+
+.aboutPageBody-container{
+    margin-top: 30px;
+    width: 80%;
+    margin-left: 10%;
+}
+.body-about{
+    text-align: justify;
+    font-size: 30px;
+}
+
+.backToHome-btn{
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
