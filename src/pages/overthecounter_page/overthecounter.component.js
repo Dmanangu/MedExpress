@@ -45,7 +45,6 @@ export class OverTheCounterPage extends React.Component {
     return (
       <div className="otc-content">
         <Navigation />
-
         <header className="header-otc">
           <img className="otc-image" src={overImg} alt="over" />
           <div className="txt-padding"></div>
