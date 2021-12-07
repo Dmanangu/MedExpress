@@ -42,10 +42,6 @@ export const Navigation = ({ currentUser, hidden }) => (
               <CartIcon />
             </button>
           </Link>
-<<<<<<< HEAD
-=======
-
->>>>>>> a58b7a79f5675212b15a005a6ff7a98aedfe05c2
           <div className="user-dropdown">
             <div className="userIcon">
               <img src={user} className="drop-btn" alt="icon" />
