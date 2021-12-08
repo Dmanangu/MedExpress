@@ -17,7 +17,7 @@ export const Card = (props) => {
         <div className="card">
           <img
             className="card-img"
-            src={"https://i.ibb.co/6HCNMM9/1.jpg"}
+            src={props.data.imageUrl}
             alt="cannot display"
           />
 
