@@ -4,7 +4,7 @@ import { useCart } from "react-use-cart";
 import { addItem } from "../../redux/cart/cart.actions";
 import { connect } from "react-redux";
 import "./card.component.css";
-
+import assetImage from "../../assets/images/1.jpg";
 export const Card = (props) => {
   const name = "1";
   console.log("IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
@@ -17,11 +17,7 @@ export const Card = (props) => {
         <div className="card">
           {/* <img src={"../../assets/images/1.jpg"} className="card-img" alt="" /> */}
 
-          <img
-            className="card-img"
-            src={"../../assets/images/1.jpg"}
-            alt="cannot display"
-          />
+          <img className="card-img" src={assetImage} alt="cannot display" />
 
           <div className="card-body">
             <h5 className="card-prodname">{props.data.prodName}</h5>
