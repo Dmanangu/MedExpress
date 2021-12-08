@@ -7,17 +7,20 @@ import "./card.component.css";
 
 export const Card = (props) => {
   const name = "1";
-  console.log("SSSSSSSSSSfffffffffSSSSSSSS");
+  console.log("IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
   console.log(props.data.medID);
-  console.log("SSSSSSSSSSSSffffffffSSSSSSSSSS");
+  console.log(`../../assets/images/${props.data.medID}.jpg`);
+  console.log("IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
   return (
     <Container className="card-container">
       <div className="product-card-container">
         <div className="card">
+          {/* <img src={"../../assets/images/1.jpg"} className="card-img" alt="" /> */}
+
           <img
-            src={`../../assets/images${name}.jpg`}
             className="card-img"
-            alt=""
+            src={"../../assets/images/1.jpg"}
+            alt="cannot display"
           />
 
           <div className="card-body">

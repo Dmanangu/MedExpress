@@ -27,7 +27,6 @@
   margin-top: 4%;
   height: 35%;
   width: 90%;
-  position: absolute;
 }
 .otc-txt {
   color: black;
@@ -50,6 +49,6 @@
 }
 
 .search-container {
-  margin-top: 22%;
+  margin-top: 5%;
   margin-left: 10%;
 }

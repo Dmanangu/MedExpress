@@ -1,12 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import "firebase/firestore";
-import {
-  firestore,
-  convertCollectionsSnapshotToMap,
-} from "./firebase/firebase.utils.js";
 import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
 
 import { OrderSummary } from "./component/export-components";
 import {
@@ -27,11 +22,11 @@ import {
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 import { setCurrentUser } from "./redux/user/user.actions";
-import { selectCurrentUser } from "./redux/user/user.selectors";
 
 import { requestRobots } from "./redux/request_data/request_data.action";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
