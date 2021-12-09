@@ -4,13 +4,9 @@ import { Container } from "react-bootstrap";
 import { addItem } from "../../redux/cart/cart.actions";
 import { connect } from "react-redux";
 import "./card.component.css";
+import { Link } from "react-router-dom";
 // import assetImage from "../../assets/images/1.jpg";
 export const Card = (props) => {
-  // const name = "1";
-  // console.log("IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
-  // console.log(props.data.medID);
-  // console.log(`../../assets/images/${props.data.medID}.jpg`);
-  // console.log("IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
   return (
     <Container className="card-container">
       <div className="product-card-container">
@@ -27,10 +23,14 @@ export const Card = (props) => {
 
             <h5 className="card-price">₱{props.data.price}</h5>
             <div className="btns">
-              <button className="buy-btn" onClick={() => addItem(props)}>
-                Buy
+              <Link to="/CheckoutPage">
+                <button className="buy-btn" onClick={() => addItem(props)}>
+                  Buy
+                </button>
+              </Link>
+              <button className="add-btn" onClick={() => addItem(props)}>
+                Add
               </button>
-              <button className="add-btn">Add </button>
             </div>
           </div>
         </div>
