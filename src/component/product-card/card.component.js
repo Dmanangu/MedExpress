@@ -5,7 +5,7 @@ import { addItem } from "../../redux/cart/cart.actions";
 import { connect } from "react-redux";
 import "./card.component.css";
 import { Link } from "react-router-dom";
-// import assetImage from "../../assets/images/1.jpg";
+
 export const Card = (props) => {
   return (
     <Container className="card-container">
