@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { useCart } from "react-use-cart";
+// import { useCart } from "react-use-cart";
 import { addItem } from "../../redux/cart/cart.actions";
 import { connect } from "react-redux";
 import "./card.component.css";

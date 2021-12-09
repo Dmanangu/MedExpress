@@ -12,6 +12,7 @@ import "./checkout.components.css";
 
 export const CheckoutPage = ({ cartItems, total }) => (
   <div className="checkout-page">
+    <Navigation />
     <div className="checkout-header">
       <div className="header-block">
         <span>Product</span>

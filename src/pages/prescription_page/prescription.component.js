@@ -1,15 +1,15 @@
 import React from "react";
 import "./prescription.component.css";
 import pdImg from "../../assets/images/bg_pd.PNG";
-import { Navigation, SearchBar } from "../../component/export-components";
+import { Navigation } from "../../component/export-components";
 
 import store from "../../redux/store";
-import { connect, Provider } from "react-redux";
+import { Provider } from "react-redux";
 import { Card } from "../../component/product-card/card.component";
 //ACTIONS
 
-import { requestRobots } from "../../redux/request_data/request_data.action";
-import { setSearchField } from "../../redux/searchfield/search.action";
+// import { requestRobots } from "../../redux/request_data/request_data.action";
+// import { setSearchField } from "../../redux/searchfield/search.action";
 
 export class PrescriptionPage extends React.Component {
   constructor(props) {

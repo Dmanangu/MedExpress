@@ -2,10 +2,10 @@ import React from "react";
 import "./searchbar.component.css";
 export class SearchBar extends React.Component {
   render() {
-    const { medicine, searchField } = this.state;
-    const filteredMedicine = medicine.filter((medicine) =>
-      medicine.prodName.toLowerCase().includes(searchField.toLowerCase())
-    );
+    // const { medicine, searchField } = this.state;
+    // const filteredMedicine = medicine.filter((medicine) =>
+    //   medicine.prodName.toLowerCase().includes(searchField.toLowerCase())
+    // );
     return (
       <div className="search">
         <input
