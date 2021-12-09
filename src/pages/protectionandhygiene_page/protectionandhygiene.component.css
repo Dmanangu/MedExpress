@@ -9,26 +9,12 @@
   border-radius: 15px;
   margin-left: 80px;
   margin-top: 4%;
-  height: 35%;
+  height: 50%;
   width: 90%;
   position: absolute;
 }
-.pah-txt {
-  color: black;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  text-shadow: 2px 2px 8px black;
-}
 
-.txt-padding {
-  top: 25%;
-  left: 33%;
-  position: absolute;
-  background-color: white;
-  width: 35vw;
-  height: 10vh;
-  opacity: 0.9;
+.PAHsearch-container{
+  margin-top: 33%;
+  margin-left: 10%;
 }
