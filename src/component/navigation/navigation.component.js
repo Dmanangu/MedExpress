@@ -6,10 +6,9 @@ import { createStructuredSelector } from "reselect";
 
 import user from "../../assets/images/user.png";
 import "bootstrap/dist/css/bootstrap.css";
-
+import { Nav } from "react-bootstrap";
 import "./navigation.component.css";
 import CartIcon from "../cart-icon/cart-icon.component";
-import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
@@ -60,7 +59,6 @@ export const Navigation = ({ currentUser, hidden }) => (
             </div>
           </div>
         </div>
-        <div className="line-padding"></div>
       </div>
     </div>
     <div className="menu-bars">
@@ -95,7 +93,6 @@ export const Navigation = ({ currentUser, hidden }) => (
         </button>
       </Link>
     </div>
-    <div className="lines-padding"></div>
   </div>
 );
 const mapStateToProps = createStructuredSelector({

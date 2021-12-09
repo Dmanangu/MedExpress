@@ -1,16 +1,15 @@
 import React from "react";
 import "./overthecounter.component.css";
-import overImg from "../../assets/images/bg_over.png";
-import { Navigation, SearchBar } from "../../component/export-components";
+import overImg from "../../assets/images/bg_over.PNG";
+import { Navigation } from "../../component/export-components";
 
 import store from "../../redux/store";
 import { connect, Provider } from "react-redux";
 import { Card } from "../../component/product-card/card.component";
-//ACTIONS
 
+//ACTIONS
 import { requestRobots } from "../../redux/request_data/request_data.action";
 import { setSearchField } from "../../redux/searchfield/search.action";
-
 export class OverTheCounterPage extends React.Component {
   constructor(props) {
     super(props);
@@ -20,10 +19,6 @@ export class OverTheCounterPage extends React.Component {
       medicineList: [],
     };
   }
-
-  // componentDidMount() {
-  //   this.props.requestRobots;
-  // }
 
   handleChange = (e, ownProps) => {
     this.setState(
@@ -40,12 +35,13 @@ export class OverTheCounterPage extends React.Component {
   };
 
   getResults = (ownProps) => {
-    //console.log(this.state.medicineList.map((e) => console.log(e)));
     console.log("ORIGGGGGGGGGGGGGGGGG");
     console.log(ownProps);
     console.log("ORIGGGGGGGGGGGGGGGGG");
     const filteredMedicine = ownProps.filter((meds) => {
-      return meds.prodName.toLowerCase().includes(this.state.search);
+      return meds.prodName
+        .toLowerCase()
+        .includes(this.state.search.toLocaleLowerCase());
     });
     console.log("FILETERRRR");
     console.log(filteredMedicine);
@@ -59,46 +55,42 @@ export class OverTheCounterPage extends React.Component {
   render() {
     const state = store.getState();
     const medicine = state.requestRobots.medicine;
-    // const filteredMedicine = medicine.filter((meds) => {
-    //   return meds.category.toLowerCase().includes("a");
-    // });
+    const medsByCategory = medicine.filter((meds) => {
+      return meds.category.toLowerCase().includes("a");
+    });
 
-    // console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyy");
-    // console.log(this.props);
-    // console.log("yyyyyyyyyyyyyyyyyyyyyyyyyyyy");
-    // const filteredGamot = medicine.filter((meds) => {
-    //   return meds.prodName.toLowerCase().includes(searchField.toLowerCase());
-    // });
     return (
       <Provider store={store}>
         <div className="otc-content">
           <Navigation />
           <header className="header-otc">
             <img className="otc-image" src={overImg} alt="over" />
-            <div className="txt-padding"></div>
-            <h1 className="otc-txt">Over The Counter</h1>
           </header>
-          <div className="search-container">
+          <div className="OTCsearch-container">
             <div className="search">
               <input
                 className="search-bar"
                 type="search"
                 //value={this.state.search}
-                placeholder="Search Medicine"
-                onChange={(e) => this.handleChange(e, medicine)}
+                placeholder="Search Over the Counter Medicine Here"
+                onChange={(e) => this.handleChange(e, medsByCategory)}
               />
             </div>
           </div>
           <div className="contain-card">
-            {this.state.medicineList.map((item) => (
-              <Card key={item.id} data={item} />
-            ))}
+            {this.state.medicineList.length === 0 && this.state.search === ""
+              ? medsByCategory.map((item) => <Card key={item.id} data={item} />)
+              : this.state.medicineList.map((item) => (
+                  <Card key={item.id} data={item} />
+                ))}
           </div>
+          >
         </div>
       </Provider>
     );
   }
 }
+// this.state.medicineList 97
 
 // the function returns an object then uses connect to change the data from redecers.
 const mapDispatchToProps = (dispatch) => {

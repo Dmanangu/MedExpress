@@ -1,34 +1,35 @@
 .pd-content {
-  background-image: url("../../assets/images/bg_image.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+	background-image: url("../../assets/images/bg_image.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .pd-image {
-  box-shadow: 2px 2px 4px black;
-  border-radius: 15px;
-  margin-left: 80px;
-  margin-top: 4%;
-  height: 35%;
-  width: 90%;
-  position: absolute;
+	box-shadow: 2px 2px 4px black;
+	border-radius: 15px;
+	margin-left: 80px;
+	margin-top: 4%;
+	margin-bottom: 4%;
+	height: 35%;
+	width: 90%;
+	position: absolute;
 }
 .pd-txt {
-  color: black;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  text-shadow: 2px 2px 8px black;
+	color: black;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+	text-shadow: 2px 2px 8px black;
 }
 
 .txt-padding {
-  top: 25%;
-  left: 33%;
-  position: absolute;
-  background-color: white;
-  width: 35vw;
-  height: 10vh;
-  opacity: 0.9;
+	top: 25%;
+	left: 33%;
+	position: absolute;
+	background-color: white;
+	width: 35vw;
+	height: 10vh;
+	opacity: 0.9;
 }

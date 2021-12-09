@@ -1,35 +1,83 @@
 import React from "react";
-import pcImg from "../../assets/images/bg_pc.jpg";
-import { Navigation, SearchBar } from "../../component/export-components";
+import pcImg from "../../assets/images/bg_pc.PNG";
 
 import "./personalcare.component.css";
-
-import Card from "../../component/product-card/card.component";
 import store from "../../redux/store";
-
+import { Navigation } from "../../component/export-components";
+import { Card } from "../../component/product-card/card.component";
 export class PersonalCarePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: "",
+      results: [],
+      medicineList: [],
+    };
+  }
+
+  handleChange = (e, ownProps) => {
+    this.setState(
+      {
+        ...this.state,
+        search: e.target.value,
+      },
+      () => {
+        if (this.state.search && this.state.search.length >= 1) {
+          this.getResults(ownProps);
+        }
+      }
+    );
+  };
+
+  getResults = (ownProps) => {
+    //console.log(this.state.medicineList.map((e) => console.log(e)));
+    console.log("ORIGGGGGGGGGGGGGGGGG");
+    console.log(ownProps);
+    console.log("ORIGGGGGGGGGGGGGGGGG");
+    const filteredMedicine = ownProps.filter((meds) => {
+      return meds.prodName
+        .toLowerCase()
+        .includes(this.state.search.toLocaleLowerCase());
+    });
+    console.log("FILETERRRR");
+    console.log(filteredMedicine);
+    console.log("FILETERRRR");
+    this.setState({
+      ...this.state,
+      medicineList: filteredMedicine,
+    });
+  };
+
   render() {
     const state = store.getState();
     const medicine = state.requestRobots.medicine;
-    const filteredMedicine = medicine.filter((meds) => {
+    const medsByCategory = medicine.filter((meds) => {
       return meds.category.toLowerCase().includes("c");
     });
+
     return (
-      <div className="pc-content">
+      <div className="otc-content">
         <Navigation />
         <header className="header-pc">
           <img className="pc-image" src={pcImg} alt="over" />
-          <div className="txt-padding"></div>
-          <h1 className="pc-txt">Personal Care</h1>
         </header>
         <div className="search-container">
-          <SearchBar />
+          <div className="search">
+            <input
+              className="search-bar"
+              type="search"
+              //value={this.state.search}
+              placeholder="Search Medicine"
+              onChange={(e) => this.handleChange(e, medsByCategory)}
+            />
+          </div>
         </div>
-
         <div className="contain-card">
-          {filteredMedicine.map((item) => (
-            <Card key={item.id} data={item} />
-          ))}
+          {this.state.medicineList.length === 0 && this.state.search === ""
+            ? medsByCategory.map((item) => <Card key={item.id} data={item} />)
+            : this.state.medicineList.map((item) => (
+                <Card key={item.id} data={item} />
+              ))}
         </div>
       </div>
     );

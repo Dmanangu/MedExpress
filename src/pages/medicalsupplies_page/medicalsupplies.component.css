@@ -11,24 +11,10 @@
   margin-top: 4%;
   height: 35%;
   width: 90%;
-  position: absolute;
-}
-.ms-txt {
-  color: black;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  text-shadow: 2px 2px 8px black;
+  position:absolute;
 }
 
-.txt-padding {
-  top: 25%;
-  left: 33%;
-  position: absolute;
-  background-color: white;
-  width: 35vw;
-  height: 10vh;
-  opacity: 0.9;
+.MSsearch-container{
+  margin-top:22%;
+  margin-left: 10%;
 }
