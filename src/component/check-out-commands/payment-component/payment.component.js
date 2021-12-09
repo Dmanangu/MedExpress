@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Form, Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Navigation from "../navigation/navigation.component";
+import Navigation from "../../navigation/navigation.component";
 
 export class Payment extends React.Component {
   render() {

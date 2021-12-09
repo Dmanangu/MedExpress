@@ -10,7 +10,7 @@ import {
   ButtonGroup,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Navigation from "../navigation/navigation.component";
+import Navigation from "../../navigation/navigation.component";
 
 export class Address extends React.Component {
   render() {

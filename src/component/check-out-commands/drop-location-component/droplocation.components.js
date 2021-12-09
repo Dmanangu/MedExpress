@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Navigation from "../navigation/navigation.component";
+import Navigation from "../../navigation/navigation.component";
 
 export class OrderSummary extends React.Component {
   render() {
