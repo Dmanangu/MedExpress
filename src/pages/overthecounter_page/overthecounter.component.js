@@ -78,7 +78,7 @@ export class OverTheCounterPage extends React.Component {
             </div>
           </div>
           <div className="contain-card">
-            {this.state.medicineList.length === 0 && this.state.search === ""
+            {this.state.medicineList.length >= 0 && this.state.search === ""
               ? medsByCategory.map((item) => <Card key={item.id} data={item} />)
               : this.state.medicineList.map((item) => (
                   <Card key={item.id} data={item} />
