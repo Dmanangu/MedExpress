@@ -1,35 +1,88 @@
-import React from "react";
-import msImg from "../../assets/images/bg_ms.jpg";
-import { Navigation, SearchBar } from "../../component/export-components";
-import "./medicalsupplies.component.css";
-import Card from "../../component/product-card/card.component";
-import store from "../../redux/store";
+import React from 'react';
+import msImg from '../../assets/images/bg_ms.jpg';
+import { Navigation } from '../../component/export-components';
+import './medicalsupplies.component.css';
+import store from '../../redux/store';
+import { Card } from '../../component/product-card/card.component';
 export class MedicalSuppliesPage extends React.Component {
-  render() {
-    const state = store.getState();
-    const medicine = state.requestRobots.medicine;
-    const filteredMedicine = medicine.filter((meds) => {
-      return meds.category.toLowerCase().includes("f");
-    });
-    return (
-      <div className="ms-content">
-        <Navigation />
-        <header className="header-ms">
-          <img className="ms-image" src={msImg} alt="over" />
-          <div className="txt-padding"></div>
-          <h1 className="ms-txt">Medical Supplies</h1>
-        </header>
-        <div className="search-container">
-          <SearchBar />
-        </div>
-        <div className="contain-card">
-          {filteredMedicine.map((item) => (
-            <Card key={item.id} data={item} />
-          ))}
-        </div>
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			search: '',
+			results: [],
+			medicineList: []
+		};
+	}
+
+	handleChange = (e, ownProps) => {
+		this.setState(
+			{
+				...this.state,
+				search: e.target.value
+			},
+			() => {
+				if (this.state.search && this.state.search.length >= 1) {
+					this.getResults(ownProps);
+				}
+			}
+		);
+	};
+
+	getResults = (ownProps) => {
+		//console.log(this.state.medicineList.map((e) => console.log(e)));
+		console.log('ORIGGGGGGGGGGGGGGGGG');
+		console.log(ownProps);
+		console.log('ORIGGGGGGGGGGGGGGGGG');
+		const filteredMedicine = ownProps.filter((meds) => {
+			return meds.prodName.toLowerCase().includes(this.state.search.toLocaleLowerCase());
+		});
+		console.log('FILETERRRR');
+		console.log(filteredMedicine);
+		console.log('FILETERRRR');
+		this.setState({
+			...this.state,
+			medicineList: filteredMedicine
+		});
+	};
+
+	render() {
+		const state = store.getState();
+		const medicine = state.requestRobots.medicine;
+		const medsByCategory = medicine.filter((meds) => {
+			return meds.category.toLowerCase().includes('f');
+		});
+
+		//   <header className="header-pd">
+		//   <img className="pd-image" src={pdImg} alt="over" />
+		//   <div className="txt-padding" />
+		//   <h1 className="pd-txt">MedicalSuppliesPage Drugs</h1>
+		// </header>
+		return (
+			<div className="otc-content">
+				<Navigation />
+
+				<div className="search-container">
+					<div className="search">
+						<input
+							className="search-bar"
+							type="search"
+							//value={this.state.search}
+							placeholder="Search Medicine"
+							onChange={(e) => this.handleChange(e, medsByCategory)}
+						/>
+					</div>
+				</div>
+				<div className="contain-card">
+					{' '}
+					{this.state.medicineList.length === 0 && this.state.search === '' ? (
+						medsByCategory.map((item) => <Card key={item.id} data={item} />)
+					) : (
+						this.state.medicineList.map((item) => <Card key={item.id} data={item} />)
+					)}
+				</div>
+			</div>
+		);
+	}
 }
 
 export default MedicalSuppliesPage;
