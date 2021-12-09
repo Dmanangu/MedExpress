@@ -9,13 +9,13 @@
   border-radius: 15px;
   margin-left: 80px;
   margin-top: 4%;
+  margin-bottom: 5%;
   height: 50%;
   width: 90%;
-  position: absolute;
 }
 
 
 .CEsearch-container{
-  margin-top: 30%;
   margin-left: 10%;
+  margin-bottom: 5%;
 }
