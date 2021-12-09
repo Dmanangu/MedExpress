@@ -67,7 +67,7 @@ export class PersonalCarePage extends React.Component {
               className="search-bar"
               type="search"
               //value={this.state.search}
-              placeholder="Search Medicine"
+              placeholder="Search Personal Care Medicine Here"
               onChange={(e) => this.handleChange(e, medsByCategory)}
             />
           </div>
