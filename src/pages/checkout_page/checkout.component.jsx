@@ -8,14 +8,14 @@ import {
   selectCartTotal,
 } from "../../redux/cart/cart.selectors";
 import "./checkout.components.css";
-import { addItem } from "../../redux/cart/cart.actions";
+import { cartItems } from "../../redux/cart/cart.actions";
 
-export const CheckoutPage = ({ props, cartItem, total }) => {
-  const products = useSelector((state) => state);
+export const CheckoutPage = ({ props, cartItems, total }) => {
+  const medicine = useSelector((state) => state);
   console.log("products");
-  console.log(products);
+  console.log(medicine);
   console.log("products");
-  const medicine = products.requestRobots.medicine;
+
   return (
     <div>
       <Navigation />
@@ -37,9 +37,9 @@ export const CheckoutPage = ({ props, cartItem, total }) => {
             <span>Remove</span>
           </div>
         </div>
-        {/* {medicine.map((cartItem) => (
-          <CheckoutPage key={props} addItem={addItem} />
-        ))} */}
+        {cartItems.map((props) => (
+          <CheckoutPage key={props.id} cartItem={cartItems} />
+        ))}
         <div className="total">TOTAL: ₱{total}</div>
       </div>
     </div>

@@ -26,7 +26,6 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import { requestRobots } from "./redux/request_data/request_data.action";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-
 class App extends React.Component {
   unsubscribeFromAuth = null;
 

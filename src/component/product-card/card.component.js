@@ -1,12 +1,12 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 // import { useCart } from "react-use-cart";
-import { addItem } from "../../redux/cart/cart.actions";
 import { connect } from "react-redux";
 import "./card.component.css";
 import { Link } from "react-router-dom";
+import { addItem } from "../../redux/cart/cart.actions";
 
-export const Card = (props) => {
+export const Card = (props, addItem) => {
   return (
     <Container className="card-container">
       <div className="product-card-container">
@@ -39,6 +39,6 @@ export const Card = (props) => {
   );
 };
 const mapDispatchToProps = (dispatch) => ({
-  addItem: (item) => dispatch(addItem(item)),
+  addItem: (props) => dispatch(addItem(props)),
 });
 export default connect(null, mapDispatchToProps)(Card);

@@ -17,13 +17,9 @@
 	font-size: 20px;
 }
 
-.fpartHeader {
-	display: flex;
-	flex-direction: row;
-	margin-left: 60%;
-	position: absolute;
+.headerDropDown{
+	margin-left: 50%;
 }
-
 .home-btn {
 	border: transparent;
 	background-color: transparent;
@@ -78,7 +74,7 @@
 .drop-btn {
 	border: transparent;
 	background-color: transparent;
-	margin-left: 50px;
+	/* margin-left: 50px; */
 	cursor: pointer;
 	width: 70px;
 	height: 7vh;
@@ -88,7 +84,6 @@
 	position: relative;
 	display: inline-block;
 }
-
 .drop-content {
 	display: none;
 	position: absolute;
@@ -97,22 +92,18 @@
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
-
 .drop-content button {
 	color: black;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
 }
-
 .drop-content button:hover {
 	background-color: #f1f1f1;
 }
-
 .user-dropdown:hover .drop-content {
 	display: block;
 }
-
 .user-dropdown:hover .drop-btn {
 	background-color: #a3bf43;
 }
@@ -219,4 +210,242 @@
 .ce-btn:hover {
 	background-color: #a3bf43;
 	box-shadow: 2px 2px 5px black;
+}
+
+
+/** sm breakpoint **/
+@media (max-width: 480px){
+	.TitleHeader {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.firstHeader{
+		border: transparent;
+		position: relative;
+		display: inline-block;
+		align-items: center;
+	}
+	.FDA {
+		text-align: center;
+	}
+	.mainLogo{
+		margin-left: 3.5rem;
+		border: transparent;
+		background-color: transparent;
+		cursor: pointer;
+		width: 70px;
+		height: 7vh;		
+	}
+	.headerDropDown{
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 90px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
+	.headerDropDown button {
+		color: black;
+		padding: 15px 20px;
+		text-decoration: none;
+		display: block;
+		margin: 10px;
+	}
+	.headerDropDown button:hover{
+		background-color: #f1f1f1;
+	}
+	.firstHeader:hover .headerDropDown{
+		display: block;
+	}
+	.firstHeader:hover .mainLogo {
+		background-color: #a3bf43;
+	}
+
+	.menu-bars {
+		display: flex;
+		flex-direction: column;	
+		margin-left: 0;
+	}
+	.otcm-btn {
+		margin-left: 20px; /*fixed*/
+		margin-right: 70px;
+		font-size: 15px;
+		margin-bottom: 2%;
+	}
+	.otcm-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.prescription-btn {
+		margin-left: 10;
+		margin-right: 80%; /* changed to % so that medsup goes down*/
+		font-size: 15px;
+		margin-bottom: 2%;
+	}	
+	.prescription-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.medicalsupply-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 15px;
+		margin-bottom: 2%;
+	}	
+	.medicalsupply-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.pah-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 15px;
+		margin-bottom: 2%;
+	}	
+	.pah-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.pc-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 15px;
+		margin-bottom: 2%;
+	}	
+	.pc-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.ce-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 15px;
+		margin-bottom: 2%;
+	}
+	.ce-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+
+	
+}
+
+
+/** md breakpoint **/
+@media (max-width: 768px){
+	.TitleHeader {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.firstHeader{
+		border: transparent;
+		position: relative;
+		display: inline-block;
+		align-items: center;
+	}
+	.FDA {
+		text-align: center;
+	}
+	.mainLogo{
+		margin-left: 3.5rem;
+		border: transparent;
+		background-color: transparent;
+		cursor: pointer;
+		width: 70px;
+		height: 7vh;		
+	}
+	.headerDropDown{
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 90px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
+	.headerDropDown button {
+		color: black;
+		padding: 15px 20px;
+		text-decoration: none;
+		display: block;
+		margin: 10px;
+	}
+	.headerDropDown button:hover{
+		background-color: #f1f1f1;
+	}
+	.firstHeader:hover .headerDropDown{
+		display: block;
+	}
+	.firstHeader:hover .mainLogo {
+		background-color: #a3bf43;
+	}
+
+	.menu-bars {
+		display: flex;
+		flex-direction: column;	
+		margin-left: 0;
+	}
+	.otcm-btn {
+		margin-left: 20px; /*fixed*/
+		margin-right: 70px;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}
+	.otcm-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.prescription-btn {
+		margin-left: 10;
+		margin-right: 80%; /* changed to % so that medsup goes down*/
+		font-size: 20px;
+		margin-bottom: 2%;
+	}	
+	.prescription-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.medicalsupply-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}	
+	.medicalsupply-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.pah-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}	
+	.pah-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.pc-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}	
+	.pc-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+	.ce-btn {
+		margin-left: 10;
+		margin-right: 70px;
+		font-size: 20px;
+		margin-bottom: 2%;
+	}
+	.ce-btn:hover {
+		background-color: #a3bf43;
+		box-shadow: 2px 2px 5px black;
+	}
+
+	
 }

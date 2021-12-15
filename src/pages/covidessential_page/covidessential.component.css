@@ -19,3 +19,50 @@
   margin-left: 10%;
   margin-bottom: 5%;
 }
+
+@media (max-width: 480px){
+  .ce-image {
+    box-shadow: 2px 2px 4px black;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-top: 4%;
+    height: 10%;
+    width: 90%;
+  }
+
+  .CEsearch-container {
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 100vw;
+  }
+  ::placeholder {
+    font-size: 12px;
+  }
+ 
+}
+@media (min-width: 481px)and (max-width:768px){
+  .ce-image {
+    box-shadow: 2px 2px 4px black;
+    border-radius: 15px;
+    margin-left: 5%;
+    margin-top: 4%;
+    height: 10%;
+    width: 90%;
+  }
+
+  .CEsearch-container {
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 100vw;
+  }
+  ::placeholder {
+    font-size: 20px;
+  }
+
+  .contain-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-template-rows: repeat(auto, 1fr);
+  }
+  
+}

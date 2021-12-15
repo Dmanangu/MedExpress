@@ -109,3 +109,147 @@
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
+
+/* For small Device Phone 480px */
+@media (max-width: 480px){
+  .product-card-container {
+    color: tomato;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px black;
+    background-color: white;
+    width: 60vw;
+    height: 40vh;
+    margin-left: 35px;
+    flex-direction: column;
+  }
+  .card-prodname{
+    font-size: 15px;
+  }
+  .card-genname{
+    font-size: 15px;
+  }
+  .card-price{
+    font-size: 15px;
+  }
+  .card {
+    width: 60vw;
+    height: 40vh;
+  }
+  .card-img{
+    width: 150px;
+    height: 150px;
+  }
+  .card-body {
+    width: 60vw;
+    height: 40vh;
+  }
+  .btns {
+    margin:20px;
+  }
+  .buy-btn {
+    color: white;
+    background-color: green;
+    font-size: 25px;
+    box-shadow: 1px 1px 3px black;
+    margin: 5px;
+    margin-right: 40px;
+    border-radius: 10px;
+    border: transparent;
+  }
+  
+  .buy-btn:hover {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  
+  .add-btn {
+    color: white;
+    background-color: #2596be;
+    font-size: 25px;
+    box-shadow: 1px 1px 3px black;
+    margin: 5px;
+    margin-left: 30px;
+    border-radius: 10px;
+    border: transparent;
+  }
+  
+  .add-btn:hover {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+}
+
+/* For Tablet Device */
+@media (min-width: 481px) and (max-width:768px){
+  .product-card-container {
+    color: tomato;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px black;
+    background-color: white;
+    width: 30vw;
+    height: 40vh;
+    margin-left: 35px;
+    flex-direction: column;
+  }
+  .card-prodname{
+    font-size: 15px;
+  }
+  .card-genname{
+    font-size: 15px;
+    word-wrap: break-word;
+    width: 140px; 
+    
+  }
+  .card-price{
+    font-size: 15px;
+  }
+  .card {
+    width: 30vw;
+    height: 40vh;
+  }
+  .card-img{
+    width: 150px;
+    height: 150px;
+  }
+  .card-body {
+    /* margin-right: 20px; */
+    width: 60vw;
+    height: 40vh;
+  }
+  .btns {
+    margin:10px;
+  }
+  .buy-btn {
+    color: white;
+    background-color: green;
+    font-size: 25px;
+    box-shadow: 1px 1px 3px black;
+    margin: 5px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: transparent;
+  }
+  
+  .buy-btn:hover {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  
+  .add-btn {
+    color: white;
+    background-color: #2596be;
+    font-size: 25px;
+    box-shadow: 1px 1px 3px black;
+    margin: 5px;
+    margin-left: 30px;
+    border-radius: 10px;
+    border: transparent;
+  }
+  
+  .add-btn:hover {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+}

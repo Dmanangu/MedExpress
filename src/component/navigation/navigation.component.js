@@ -21,7 +21,7 @@ export const Navigation = ({ currentUser, hidden }) => (
           <img src={small_logo} className="mainLogo" alt="logo" />
         </div>
         <div className="FDA"> Farmacia De Angat</div>
-        <div className="fpartHeader">
+        <div className="headerDropDown">
           <Link to="/OverTheCounter">
             <button type="button" className="home-btn">
               Home
